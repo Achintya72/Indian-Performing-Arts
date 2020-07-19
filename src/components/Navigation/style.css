@@ -1,0 +1,39 @@
+.Link, .account, .signOut, .admin {
+    font-size: large;
+    text-decoration: none;
+    flex: 1;
+    align-self: center;
+    background-color: yellow;
+    margin: auto;
+}
+.Account {
+    display: none;
+}
+.nav {
+    flex-direction: row;
+    width: 100%;
+    background-color: teal;
+}
+
+@media screen and (max-width : 600px) {
+    .Account {
+        display: initial;
+        margin: auto;
+    }
+    .Link {
+        margin: auto;
+    }
+    .account, .signOut, .admin {
+        display: none;
+    }
+    .nav {
+        bottom: 0;
+        position: fixed;
+        margin: auto;
+        height: 10%;
+        text-align: center;
+        box-sizing: border-box;
+        background-color: teal;
+        float: left;
+    }
+}
