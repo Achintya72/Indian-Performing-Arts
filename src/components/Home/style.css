@@ -1,0 +1,31 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Roboto:wght@900&display=swap');
+
+.container {
+  border: 2px solid black;
+}
+
+.homePic {
+  text-align: center;
+  position: relative;
+
+}
+.homePic img {
+  width: 100%;
+  height: auto;
+}
+.Heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+}
+.textUnder {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 2.5%;
+  border-radius: 5%;
+} */
