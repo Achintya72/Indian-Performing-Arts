@@ -19,7 +19,6 @@ import { withAuthentication } from '../Session';
 const App = () => (
   <React.Fragment>
     <Navigation />
-    <Layout>
       <Router>
         
         <Switch>
@@ -37,7 +36,6 @@ const App = () => (
           <Route path={ROUTES.ADMIN} component={AdminPage} />
         </Switch>
       </Router>
-    </Layout>
   </React.Fragment>
 );
 

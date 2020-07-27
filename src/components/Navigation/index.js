@@ -9,7 +9,6 @@ import { AuthUserContext } from '../Session';
 import { withFirebase } from '../Firebase';
 
 import { Nav, Navbar } from 'react-bootstrap';
-import './style.css';
 import styled from 'styled-components';
 
 
@@ -39,25 +38,25 @@ class NavigationAuthBase extends React.Component {
       })
   }
   render() {
+    var role;
     if (this.state.studentDetails != null) {
-      var role = this.state.studentDetails.role;
-    }
-    else {
-      var role = null;
+      role = this.state.studentDetails.role;
     }
     return (
       <Styles>
-        <Navbar expand="lg">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Navbar.Brand href={ROUTES.HOME}>Indian Performing Arts</Navbar.Brand>
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto">
+              <Nav.Item><Nav.Link href={ROUTES.DASHBOARD}>Dashboard</Nav.Link></Nav.Item>
               <Nav.Item><Nav.Link href={ROUTES.HOME}>Home</Nav.Link></Nav.Item>
               <Nav.Item><Nav.Link href={ROUTES.EVENTS}>Events</Nav.Link></Nav.Item>
               <Nav.Item><Nav.Link href={ROUTES.ABOUT}>About Us</Nav.Link></Nav.Item>
-              <Nav.Item><Nav.Link href={ROUTES.DASHBOARD}>Dashboard</Nav.Link></Nav.Item>
               <Nav.Item><Nav.Link href={ROUTES.ACCOUNT}>Account</Nav.Link></Nav.Item>
-              <Nav.Item><Nav.Link href={ROUTES.ADMIN}>Admin</Nav.Link></Nav.Item>
-              {/* <Nav.Item><Nav.Link href={ROUTES.HOME}><SignOutButton /></Nav.Link></Nav.Item> */}
+              {role === 'a' || role === 'sa' ?
+                <Nav.Item><Nav.Link href={ROUTES.ADMIN}>Admin</Nav.Link></Nav.Item>
+                : <span></span>}
             </Nav>
           </Navbar.Collapse>
         </Navbar>
@@ -67,25 +66,18 @@ class NavigationAuthBase extends React.Component {
 
 }
 const Styles = styled.div`
-  .navbar {
-    background-color: #222;
-  }
-
-  .navbar-brand, .navbar-nav .nav-link {
-    color: #bbb;
-
-    &:hover {
-      color:white;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+  .navbar-brand {
+    font-family: 'Roboto';
   }
 `;
 const NavigationAuth = withFirebase(NavigationAuthBase);
 const NavigationNonAuth = () => (
   <Styles>
-    <Navbar expand='lg'>
+    <Navbar collapseOnSelect expand='sm' bg="dark" variant="dark">
       <Navbar.Brand href={ROUTES.HOME}>Indian Performing Arts</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
+      <Navbar.Toggle aria-controls="reponsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
           <Nav.Item><Nav.Link className="nav-link" href={ROUTES.HOME}>Home</Nav.Link></Nav.Item>
           <Nav.Item><Nav.Link href={ROUTES.EVENTS}>Events</Nav.Link></Nav.Item>

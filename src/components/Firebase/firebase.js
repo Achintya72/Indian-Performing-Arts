@@ -25,7 +25,6 @@ class Firebase {
     }
 
 
-
     doCreateUserWithEmailAndPassword = (email, password) =>
         this.auth.createUserWithEmailAndPassword(email, password);
 
