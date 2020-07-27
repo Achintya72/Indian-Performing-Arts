@@ -9,29 +9,32 @@ import UserCard from './userCard';
 class AdminPage extends Component {
   constructor(props) {
     super(props);
-  }
-  componentDidMount() {
-    if (this.props.firebase.auth.currentUser == null) {
-      this.props.history.push(ROUTES.HOME);
+    this.state = {
+      loading: true
     }
-    else {
-      this.props.firebase.users().where('email', '==', `${this.props.firebase.auth.currentUser.email}`)
-        .get()
-        .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
-            this.setState({ ...doc.data() });
-          })
-        });
+  }
+  componentDidUpdate() {
+    const { loading } = this.state;
+    if(loading !== false) {
+    this.props.firebase.users().where('email', '==', `${this.props.firebase.auth.currentUser.email}`)
+      .get()
+      .then(querySnapshot => {
+        querySnapshot.forEach(doc => {
+          this.setState({loading: false, ...doc.data() });
+        })
+      });
     }
   }
   render() {
-    var role = null;
-    if (this.state !== null) {
-      role = this.state.studentDetails.role;
-    }
+    const { loading } = this.state;
     return (
       <div>
-        {role == 'a' || role == 'sa' ? <AdminPageRight /> : <AdminPageWrong />}
+        {loading ? <h1> Loading ...</h1>:
+        <div>
+          {this.state.studentDetails.role == 'a' || this.state.studentDetails.role == 'sa' ?
+          <AdminPageRight />
+        : <AdminPageWrong />}  
+        </div>}
       </div>
     )
   }
@@ -82,7 +85,7 @@ class AdminPageRightBase extends Component {
       return (
         <UserCard
           key={user.id}
-          id={user.id}  
+          id={user.id}
           email={user.email}
           name={user.name}
           instruments={user.studentDetails.instruments}
@@ -97,7 +100,7 @@ class AdminPageRightBase extends Component {
     })
     return (
       <div>
-        {loading ? <h1>Loading...</h1>:  userList}
+        {loading ? <h1>Loading...</h1> : userList}
       </div>
     )
   }
