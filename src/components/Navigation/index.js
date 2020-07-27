@@ -1,8 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import { MdAccountCircle } from 'react-icons/md'
 
-import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
 
 import { AuthUserContext } from '../Session';

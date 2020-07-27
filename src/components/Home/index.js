@@ -5,7 +5,7 @@ import './styles.css'
 const HomePage = () => (
     <div className="contain">
         <Jumbotron>
-            <img src={require('../Images/back.jpg')} alt="Performance" style={{ width: '100%' }} />
+            <img src={require('../Images/Jumbo2.jpg')} alt="Performance" style={{ width: '100%' }} />
             <div className="centered">
                 <h1>Tabla and Bansuri</h1>
                 <Button variant="dark" href="https://www.google.com">Watch Performances</Button>
@@ -13,10 +13,10 @@ const HomePage = () => (
         </Jumbotron>
 
         <Layout>
-            <h1 className="header"> Instruments</h1>
+            <h1 className="header">Instruments</h1>
             <div className="Instruments">
                 <Card>
-                    <Card.Img variant="top" src={require("../Images/Home1.jpg")} />
+                    <Card.Img variant="top" src={require("../Images/Flute.jpg")} />
                     <Card.Body>
                         <Card.Title> Flute </Card.Title>
                         <Card.Text>
@@ -26,7 +26,7 @@ const HomePage = () => (
                     </Card.Body>
                 </Card>
                 <Card>
-                    <Card.Img variant="top" src={require("../Images/Home.jpg")} />
+                    <Card.Img variant="top" src={require("../Images/Tabla.jpg")} />
                     <Card.Body>
                         <Card.Title> Tabla </Card.Title>
                         <Card.Text>
@@ -36,17 +36,35 @@ const HomePage = () => (
                     </Card.Body>
                 </Card>
             </div>
-
+            <h1 className="header">Words from Students</h1>
             <div className="Testimonials">
-                <h2>Words from Students</h2>
-                <div id='1'>
-                    <p> "I love it"</p>
-                    <p> ~ Achintya Agrawal, 13 </p>
-                </div>
-                <div id="2">
-                    <p> Can't stop playing</p>
-                    <p> ~ Pranav Kannepalli, 13 </p>
-                </div>
+                <Card>
+                    <Card.Body>
+                        <blockquote className="blockquote mb-0">
+                            <p>
+                                I feel so happy when I play the flute.
+                                Not only have these classes helped me connect to my origins more,
+                                they have given me a community of music lovers.
+                            </p>
+                        </blockquote>
+                        <footer className="blockquote-footer">
+                            Achintya Agrawal <cite title="instrumentdeets">Learning Bansuri since 2019</cite>
+                        </footer>
+                    </Card.Body>
+                </Card>
+                <Card>
+                    <Card.Body>
+                        <blockquote className="blockquote mb-0">
+                            <p>
+                                These classses expand my knowledge about music everyday,
+                                and I feel proud of myself and happy to play the Tabla.
+                            </p>
+                        </blockquote>
+                        <footer className="blockquote-footer">
+                            Pranav Kannepalli <cite title="instrumentdeets">Learning Tabla since 2017</cite>
+                        </footer>
+                    </Card.Body>
+                </Card>
             </div>
         </Layout>
     </div>

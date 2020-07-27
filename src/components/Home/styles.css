@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@900&display=swap');
 
 /* Jumbotron Styles */
 
@@ -16,10 +16,13 @@
 .centered {
   position: absolute;
   font-family: "Roboto";
-  font-size: 2.5rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.centered h1 {
+  font-size: 6vw;
+  padding-bottom: 2vw;
 }
 
 /* Instrument Gallery Styles */
@@ -32,23 +35,50 @@
 }
 .card {
   width: 40%;
+  margin-bottom: 5vw;
 }
 .header {
   font-family: 'Roboto';
-  padding-bottom: 1em;
+  padding-top: 2rem;
+}
+/* Testimonial Gallery Styles */
+.Testimonials {
+  display: flex;
+}
+.Testimonials .card {
+  width: 50%;
+}
+.card-title {
+  font-weight: bold;
+}
+.card {
+  font-family: 'Monsterrat', sans-serif;
+}
+/* Other Styles */
+.card .btn-outline-primary {
+  border-color: #508991;
+  color: #508991;
+}
+.card .btn-outline-primary:hover {
+  background-color: #508991;
+  color: white;
 }
 /* Responsive Experience Styles */
-@media (max-width: 700px) {
-  h1 {
-    font-size: 2rem;
+@media (min-width: 1600px) {
+  .jumbotron h1 {
+    font-size: 4rem;
   }
 }
 @media (max-width: 400px){
-  .Instruments {
+  .Instruments, .Testimonials {
     flex-direction: column;
   }
   .card {
     width: 100%;
+  }
+  .Testimonials .card {
+    width: 100%;
+    margin-bottom: 5vw;
   }
   .centered {
     display: flex;
@@ -58,15 +88,5 @@
 @media (max-width: 760px) and (min-width: 401px){
   .card{
     width: 50%;
-  }
-}
-@media (max-width: 530px) {
-  h1 {
-    font-size: 1.75rem;
-  }
-}
-@media (max-width: 452px) {
-  h1 {
-    font-size: 1.5rem;
   }
 }

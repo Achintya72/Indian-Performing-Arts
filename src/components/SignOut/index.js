@@ -7,11 +7,6 @@ import { compose} from 'recompose';
 import * as ROUTES from '../../constants/routes';
 
 class SignOutButtonBase extends React.Component {
-  constructor(props) {
-    super(props);
-
-  }
-
   handleClick = () => {
     this.props.firebase.doSignOut();
     this.props.history.push(ROUTES.HOME);

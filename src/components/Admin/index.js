@@ -31,7 +31,7 @@ class AdminPage extends Component {
       <div>
         {loading ? <h1> Loading ...</h1>:
         <div>
-          {this.state.studentDetails.role == 'a' || this.state.studentDetails.role == 'sa' ?
+          {this.state.studentDetails.role === 'a' || this.state.studentDetails.role === 'sa' ?
           <AdminPageRight />
         : <AdminPageWrong />}  
         </div>}
