@@ -11,7 +11,6 @@ import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import EventPage from '../Events';
 import AboutPage from '../About';
-import { Layout } from './Layout';
 
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
