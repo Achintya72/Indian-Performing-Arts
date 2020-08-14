@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@900&family=Roboto:wght@300;700&display=swap");
+
+.events {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.events .card {
+  width: 32%;
+  margin-bottom: 10px;
+}
+.events .react-datetime-picker__wrapper {
+    border: none;
+}
+.card-title {
+  font-family: "Raleway", sans-serif;
+}
+.card-text {
+  font-family: "Roboto", sans-serif;
+}
+.eventspage .btn {
+  margin-bottom: 10px;
+}
+@media (max-width: 720px) {
+  .events {
+    flex-direction: column;
+  }
+  .events .card {
+    width: 100%;
+  }
+}
+.admin .nav-pills .nav-item a{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+.admin .nav-pills .nav-item .active{
+    background-color: #E3170A;
+}
+.spincontainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

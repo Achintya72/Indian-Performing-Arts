@@ -2,60 +2,59 @@
 
 /* Jumbotron Styles */
 
-.contain {
+.home {
   width: 100%;
   margin: auto;
   max-width: 1600px;
+  background-color:#C2A83E;
 }
-.jumbotron {
+.home .jumbotron {
   padding: 0;
   position: relative;
   text-align: center;
   color: white;
 }
-.centered {
+.home .centered {
   position: absolute;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.centered h1 {
+.home .centered h1 {
   font-size: 6vw;
+  font-weight: 700;
   padding-bottom: 2vw;
 }
 
 /* Instrument Gallery Styles */
-.contain {
-  background-color:#C2A83E;
-}
-.Instruments {
+
+.home .Instruments {
   display: flex;
   justify-content: space-between;
 }
-.card {
+.home .card {
   width: 40%;
   margin-bottom: 5vw;
 }
 .header {
   font-family: 'Roboto';
+  font-weight: 900;
   padding-top: 2rem;
 }
 /* Testimonial Gallery Styles */
-.Testimonials {
+.home .Testimonials {
   display: flex;
 }
-.Testimonials .card {
+.home .Testimonials .card {
   width: 50%;
 }
-.card-title {
+.home .card-title {
   font-weight: bold;
-}
-.card {
-  font-family: 'Monsterrat', sans-serif;
 }
 /* Other Styles */
 .card .btn-outline-primary {
+  font-family: 'Roboto', sans-serif;
   border-color: #508991;
   color: #508991;
 }
@@ -65,22 +64,22 @@
 }
 /* Responsive Experience Styles */
 @media (min-width: 1600px) {
-  .jumbotron h1 {
+  .home .jumbotron h1 {
     font-size: 4rem;
   }
 }
 @media (max-width: 400px){
-  .Instruments, .Testimonials {
+  .home .Instruments, .home .Testimonials {
     flex-direction: column;
   }
-  .card {
+  .home .card {
     width: 100%;
   }
-  .Testimonials .card {
+  .home .Testimonials .card {
     width: 100%;
     margin-bottom: 5vw;
   }
-  .centered {
+  .home .centered {
     display: flex;
     width: 90%;
   }

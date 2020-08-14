@@ -1,7 +1,7 @@
 import app from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 
 
 const config = {
@@ -18,7 +18,7 @@ const config = {
 class Firebase {
     constructor() {
         this.app = app.initializeApp(config);
-
+        this.firebase = firebase;
         this.auth = this.app.auth();
         this.db = this.app.firestore();
         this.auth.setPersistence(firebase.auth.Auth.Persistence.SESSION);
@@ -42,6 +42,7 @@ class Firebase {
 
     getUserData = () => this.users().where('email', '==', `${this.auth.currentUser}`);
     
+    events = () => this.db.collection('events');
 }
 
 export default Firebase;

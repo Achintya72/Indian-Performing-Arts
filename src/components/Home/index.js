@@ -3,7 +3,7 @@ import { Jumbotron, Button, Card } from 'react-bootstrap';
 import { Layout } from '../App/Layout';
 import './styles.css'
 const HomePage = () => (
-    <div className="contain">
+    <div className="home">
         <Jumbotron>
             <img src={require('../Images/Jumbo2.jpg')} alt="Performance" style={{ width: '100%' }} />
             <div className="centered">
