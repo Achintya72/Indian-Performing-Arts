@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Button, ButtonGroup } from 'react-bootstrap';
+import { Card, Button, ButtonGroup, Form } from 'react-bootstrap';
 import DateTimePicker from 'react-datetime-picker';
 import './style.css';
 import { withFirebase } from '../Firebase';
@@ -147,83 +147,71 @@ class EventCard extends React.Component {
                     <Card>
                         <Card.Img src={image}></Card.Img>
                         <Card.Body>
-                            <div className="form-group">
-                                <label className="form-label" htmlFor='url'>Image Url:</label>
-                                <input
-                                    id="url"
-                                    className="form-control"
-                                    name="image"
-                                    type="text"
-                                    value={image}
-                                    onChange={this.handleChange}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label className="form-label" htmlFor='name'>Event Name: </label>
-                                <input
-                                    id="name"
-                                    name="name"
-                                    type="text"
-                                    className="form-control"
-                                    value={name}
-                                    onChange={this.handleChange}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label className="form-label" htmlFor='des'>Description: </label>
-                                <textarea
-                                    className="form-control"
-                                    id="des"
-                                    name="description"
-                                    onChange={this.handleChange}
-                                    value={description}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label className="form-label" htmlFor='st'>Starting Time:</label>
-                                <DateTimePicker id="st" className="form-control" value={date1} onChange={this.firstTime} />
-                            </div>
-                            <div className="form-group">
-                                <label className="form-label" htmlFor='et'>Ending Time:</label>
-                                <DateTimePicker id="et" className="form-control" value={date2} onChange={this.sTime} />
-                            </div>
-                            <div className="form-group">
-                                <label className="form-label" htmlFor="locText">Location Address:</label>
-                                <input
-                                    name="location.Address"
-                                    id="locText"
-                                    className="form-control"
-                                    value={location.Address}
-                                    type="text"
-                                    onChange={this.handleChange}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label className="form-label" htmlFor="locUrl">Location G-Map URL:</label>
-                                <input
-                                    name="location.gmap"
-                                    id="locUrl"
-                                    className="form-control"
-                                    value={location.gmap}
-                                    type="url"
-                                    onChange={this.handleChange}
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label className="form-label" htmlFor="deets">Url for More Information:</label>
-                                <input
-                                    name="url"
-                                    className="form-control"
-                                    id="deets"
-                                    value={url}
-                                    type="url"
-                                    onChange={this.handleChange} />
-                            </div>
-                            <ButtonGroup>
-                                <Button variant="primary" onClick={this.onCancel}>Cancel</Button>
-                                <Button variant='primary' onClick={this.onSave}>Save</Button>
-                                <Button variant="primary" onClick={this.onRemove}>Remove Event</Button>
-                            </ButtonGroup>
+                            <Form>
+                                <Form.Group controlId="Event.Image">
+                                    <Form.Label>Image URL: </Form.Label>
+                                    <Form.Control
+                                        name="image"
+                                        type="url" 
+                                        value={image}
+                                        onChange={this.handleChange} />
+                                </Form.Group>
+                                <Form.Group controlId="Event.Name">
+                                    <Form.Label>Event Name: </Form.Label>
+                                    <Form.Control
+                                        name="name"
+                                        type="text" 
+                                        value={name}
+                                        onChange={this.handleChange} />
+                                </Form.Group>
+                                <Form.Group controlId="Event.Description">
+                                    <Form.Label>Description: </Form.Label>
+                                    <Form.Control
+                                        name="description"
+                                        as="textarea"
+                                        rows='5' 
+                                        value={description}
+                                        onChange={this.handleChange} />
+                                </Form.Group>
+                                <Form.Group controlId="Event.st">
+                                    <Form.Label>Image URL: </Form.Label>
+                                    <DateTimePicker id="st" className="form-control" value={date1} onChange={this.firstTime} />
+                                </Form.Group>
+                                <Form.Group controlId="Event.et">
+                                    <Form.Label>Ending Time:</Form.Label>
+                                    <DateTimePicker id="et" className="form-control" value={date2} onChange={this.sTime} />
+                                </Form.Group>
+                                <Form.Group controlId="Event.Location.Text">
+                                    <Form.Label>Location Address: </Form.Label>
+                                    <Form.Control
+                                        name="location.Address"
+                                        type="text" 
+                                        value={location.Address}
+                                        onChange={this.handleChange} />
+                                </Form.Group>
+                                <Form.Group controlId="Event.Location.GMAP">
+                                    <Form.Label>Location G-Map URL: </Form.Label>
+                                    <Form.Control
+                                        name="location.gmap"
+                                        type="url" 
+                                        value={location.gmap}
+                                        onChange={this.handleChange} />
+                                </Form.Group>
+                                <Form.Group controlId="Event.URL">
+                                    <Form.Label>URL for More Information: </Form.Label>
+                                    <Form.Control
+                                        name="url"
+                                        type="text" 
+                                        value={url}
+                                        onChange={this.handleChange} />
+                                </Form.Group>
+
+                                <ButtonGroup>
+                                    <Button variant="primary" onClick={this.onCancel}>Cancel</Button>
+                                    <Button variant='primary' onClick={this.onSave}>Save</Button>
+                                    <Button variant="primary" onClick={this.onRemove}>Remove Event</Button>
+                                </ButtonGroup>
+                            </Form>
                         </Card.Body>
                     </Card>
                     : <Card>

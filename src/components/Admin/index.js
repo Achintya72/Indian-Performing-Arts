@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
-import AdminUsersPage from './AdminUsersPage';
+import AdminUsersPage from './AdminUsers/AdminUsersPage';
+import AdminDocumentsPage from './AdminDocumentsPage';
 import EventPage from '../Events';
 import { Nav, Container } from 'react-bootstrap';
 import Loading from '../Session/Loading';
@@ -47,10 +48,14 @@ class AdminPage extends Component {
           <Nav.Item>
             <Nav.Link eventKey="events">Events</Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="documents">Manage Documents</Nav.Link>
+          </Nav.Item>
         </Nav>
         <Loading loading={loading}>
           {currentPage === "users" ? <AdminUsersPage /> : <span></span>}
           {currentPage === "events" ? <EventPage admin={true} /> : <span></span>}
+          {currentPage === "documents" ? <AdminDocumentsPage /> : <span></span>}
         </Loading>
       </Container>
 

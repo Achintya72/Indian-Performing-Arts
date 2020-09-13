@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@900&family=Roboto:wght@300;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&family=Roboto:wght@300;700&display=swap');
 
 .events {
   display: flex;
@@ -9,7 +9,7 @@
   width: 32%;
   margin-bottom: 10px;
 }
-.events .react-datetime-picker__wrapper {
+.react-datetime-picker__wrapper {
     border: none;
 }
 .card-title {
@@ -40,4 +40,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+}
+.btn {
+  font-family: 'Roboto', sans-serif;
 }

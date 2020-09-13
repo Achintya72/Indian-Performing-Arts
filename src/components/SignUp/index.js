@@ -36,10 +36,10 @@ class SignUpFormBase extends Component {
         var instruments = [];
         
         if(flute === true) {
-            instruments.push('flute');
+            instruments.push('Flute');
         }
         if(tabla === true) {
-            instruments.push('tabla');
+            instruments.push('Tabla');
         }
      
         this.props.firebase
@@ -55,9 +55,14 @@ class SignUpFormBase extends Component {
                   studentDetails: {
                       role: 'ns',
                       instruments: instruments,
-                      song: '',
+                      songs: [],
                       isStudent: false,
-                      classTime: [0,0, 0,0]
+                      classTime: [
+                        this.props.firebase.firebase.firestore.Timestamp.fromDate(new Date()),
+                        this.props.firebase.firebase.firestore.Timestamp.fromDate(new Date())
+                      ],
+                      notes: "",
+                      hasPaidYet: false
                   }
               });
             // console.log(this.props.firebase.db.ref('users/'+ authUser.user.uid));

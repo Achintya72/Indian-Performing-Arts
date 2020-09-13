@@ -1,0 +1,15 @@
+.documents .card {
+    flex: 1;
+    min-width: 32%;
+    margin-top: 10px;
+}
+.users {
+    display: flex;
+    justify-content: space-evenly;
+}
+.users div {
+    width: 100%;
+}
+.form-label, .form-control, .form-check, .form-text, .modal{
+    font-family: 'Roboto', sans-serif;
+}

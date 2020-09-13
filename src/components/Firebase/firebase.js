@@ -1,6 +1,7 @@
 import app from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import 'firebase/storage';
 import firebase from 'firebase/app';
 
 
@@ -22,6 +23,8 @@ class Firebase {
         this.auth = this.app.auth();
         this.db = this.app.firestore();
         this.auth.setPersistence(firebase.auth.Auth.Persistence.SESSION);
+        this.storage = this.app.storage();
+        console.log(this.firebase);
     }
 
 
@@ -43,6 +46,8 @@ class Firebase {
     getUserData = () => this.users().where('email', '==', `${this.auth.currentUser}`);
     
     events = () => this.db.collection('events');
+
+    documents = () => this.db.collection('documents'); 
 }
 
 export default Firebase;
